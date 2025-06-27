@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
           title: const Text('Flutter layout demo'),
           backgroundColor: const Color.fromARGB(255, 150, 9, 126),
         ),
-        body: const MyLayout(), // ✅ แค่ใส่ MyLayout ตรงนี้พอ
+        body: const MyLayout(), 
       ),
     );
   }
@@ -39,11 +39,10 @@ class MyLayout extends StatelessWidget {
         buttonSection,
         textSection,
 
-        // ✅ เพิ่มดาวไว้ใต้ textSection
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.star, color: Colors.green[500]),
               Icon(Icons.star, color: Colors.green[500]),
@@ -64,11 +63,12 @@ class MyLayout extends StatelessWidget {
         children: [
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 Text(
                   'Oeschinen Lake Campground',
                   style: TextStyle(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 8),
                 Text(
@@ -102,12 +102,9 @@ class MyLayout extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(32),
       child: Text(
-        'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. '
-        'Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. '
-        'A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, '
-        'leads you to the lake, which warms to 20 degrees Celsius in the summer. '
-        'Activities enjoyed here include rowing, and riding the summer toboggan run.',
+        'ไอ่นนมันเป็นเก',
         softWrap: true,
+        textAlign: TextAlign.center,
       ),
     );
   }
